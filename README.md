@@ -82,6 +82,17 @@ of the selected numeric measurement.
 
 ![Histogram of the selected measurement](docs/images/measurement-distribution.png)
 
+## First Technical Modification
+
+I changed the selected penguin measurement from `bill_length_mm` to
+`flipper_length_mm` in `src/datafun/app.py`.
+
+I made this change to investigate the distribution of penguin flipper length
+instead of bill length.
+
+After running the project successfully, I observed that the output chart and
+summary were updated to use flipper-length data.
+
 ## Important Folders and Files
 
 - **data/** - the CSV data file
