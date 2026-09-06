@@ -84,14 +84,25 @@ of the selected numeric measurement.
 
 ## First Technical Modification
 
-I changed the selected penguin measurement from `bill_length_mm` to
-`flipper_length_mm` in `src/datafun/app.py`.
+I changed the selected penguin measurement from 'bill_length_mm' to 'flipper_length_mm' in 'src/datafun/app.py'.
 
 I made this change to investigate the distribution of penguin flipper length
 instead of bill length.
 
 After running the project successfully, I observed that the output chart and
 summary were updated to use flipper-length data.
+
+## Second Technical Modification
+
+I changed the short threshold multiplier from `0.9` to `0.85` and the
+long threshold multiplier from `1.1` to `1.15` in `src/datafun/app.py`.
+
+I made this change to create a wider middle range when classifying penguin
+flipper lengths. This makes a flipper length need to be farther from the
+average before it is classified as SHORT or LONG.
+
+After running the project successfully, I observed that the logged short
+threshold was lower and the logged long threshold was higher.
 
 ## Important Folders and Files
 

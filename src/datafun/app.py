@@ -119,8 +119,8 @@ around the average value.
 
 # CUSTOM: Set thresholds around the mean to
 # classify a reading.
-SHORT_THRESHOLD_MULTIPLIER: Final[float] = 0.9
-LONG_THRESHOLD_MULTIPLIER: Final[float] = 1.1
+SHORT_THRESHOLD_MULTIPLIER: Final[float] = 0.85
+LONG_THRESHOLD_MULTIPLIER: Final[float] = 1.15
 
 # === DEFINE THE MAIN FUNCTION ===
 
