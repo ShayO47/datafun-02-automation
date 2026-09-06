@@ -128,7 +128,7 @@ histogram of MPG values.
 
 The project ran successfully and created a histogram titled
 "Distribution of mpg." The chart shows that many cars have lower-to-middle MPG
-values, with fewer cars at the highest MPG values.
+values, with fewer cars at the highest MPG values. The terminal shows the average MPG for each cylinder group.
 
 ## Important Folders and Files
 

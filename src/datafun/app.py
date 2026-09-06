@@ -126,6 +126,15 @@ There is no fixed cutoff, so the program calculates the average
 and assigns a classification based on thresholds around that average.
 """
 
+ANALYST_INSIGHT: Final[str] = r"""
+After running the analysis, I observed that cars with fewer cylinders generally
+had higher average MPG than cars with more cylinders. In this dataset,
+four-cylinder cars had higher average fuel economy than eight-cylinder cars.
+This suggests that cylinder count is associated with fuel efficiency for these
+vehicles, although it does not prove that cylinder count alone causes the
+difference.
+"""
+
 # CUSTOM: Set thresholds around the mean to
 # classify a reading.
 SHORT_THRESHOLD_MULTIPLIER: Final[float] = 0.85
@@ -242,6 +251,14 @@ def main() -> None:
     # Log the selected measurement column and the reason for choosing it.
     LOG.info(f"Selected measurement column: {MEASUREMENT_COLUMN}")
     LOG.info(f"Reason for choosing this measurement: {WHY_THIS_MEASUREMENT}")
+    # CUSTOM: Compare average fuel economy across cylinder-count groups.
+    average_mpg_by_cylinders = df.groupby(GROUP_COLUMN)[MEASUREMENT_COLUMN].mean()
+
+    LOG.info(
+    f"Average {MEASUREMENT_COLUMN} by {GROUP_COLUMN}:\n"
+    f"{average_mpg_by_cylinders.round(2).to_string()}"
+    )
+    LOG.info(f"Analyst insight: {ANALYST_INSIGHT}")
 
     minimum: float = df[MEASUREMENT_COLUMN].min()
     maximum: float = df[MEASUREMENT_COLUMN].max()
