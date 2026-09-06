@@ -15,7 +15,7 @@ uv run python -m datafun.app
 
 DOMAIN:
 
-A dataset of penguins.
+A dataset of automobile fuel economy.
 See docs/data-card.md for more information about the dataset.
 
 EXPLORE:
@@ -75,7 +75,18 @@ LOG: logging.Logger = get_logger("P02", level="DEBUG")
 # Use the Path() constructor to create a Path object representing the "data" folder.
 # Combine with the CSV file name
 # to get the full path to the data file.
-DATA_FILE_PATH: Final[Path] = Path("data") / "penguins.csv"
+DATA_FILE_PATH: Final[Path] = Path("data") / "auto-mpg.data"
+AUTO_MPG_COLUMNS: Final[tuple[str, ...]] = (
+    "mpg",
+    "cylinders",
+    "displacement",
+    "horsepower",
+    "weight",
+    "acceleration",
+    "model_year",
+    "origin",
+    "car_name",
+)
 
 # === OPEN THE DATA FILE IN EXCEL ===
 
@@ -92,29 +103,27 @@ GRAIN: Final[str] = "one penguin"  # CUSTOM
 
 
 # CUSTOM: Choose a categorical group that we could process with a for loop.
-GROUP_COLUMN: Final[str] = "species"
+GROUP_COLUMN: Final[str] = "cylinders"
 # CUSTOM: Describe why we choose it.
 # Use a triple-quoted string (three double quotes) to allow multi-line text.
 # Use a raw string (r before the opening quotes) so it appears just
 # like I typed it.
 WHY_THIS_GROUP: Final[str] = r"""
-The species column has a small number of unique values.
-There are three unique species, so a for loop can
-process and log each one.
+The cylinders column has a small number of unique values.
+Using a for loop lets the program process and log each cylinder group.
 """
 
 # CUSTOM: WHICH measurement to classify, and why this one.
-MEASUREMENT_COLUMN: Final[str] = "flipper_length_mm"
+MEASUREMENT_COLUMN: Final[str] = "mpg"
 
 # CUSTOM: Describe why we choose it.
 # Use a triple-quoted string (three double quotes) to allow multi-line text.
 # Use a raw string (r before the opening quotes) so it appears just
 # like I typed it.
 WHY_THIS_MEASUREMENT: Final[str] = r"""
-Flipper length varies across penguins.
-There is no fixed cutoff, so we'll calculate the average
-and assign a classification depending on a threshold
-around the average value.
+Miles per gallon varies across cars.
+There is no fixed cutoff, so the program calculates the average
+and assigns a classification based on thresholds around that average.
 """
 
 # CUSTOM: Set thresholds around the mean to
@@ -151,7 +160,12 @@ def main() -> None:
     # Store the tabular pandas DataFrame returned
     # in a local variable named `df`.
 
-    df: pd.DataFrame = pd.read_csv(DATA_FILE_PATH)
+    df: pd.DataFrame = pd.read_csv(
+        DATA_FILE_PATH,
+        sep=r"\s+",
+        names=AUTO_MPG_COLUMNS,
+        na_values="?",
+    )
 
     LOG.info("Data loaded successfully.")
 

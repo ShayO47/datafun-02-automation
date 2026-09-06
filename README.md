@@ -94,8 +94,8 @@ summary were updated to use flipper-length data.
 
 ## Second Technical Modification
 
-I changed the short threshold multiplier from `0.9` to `0.85` and the
-long threshold multiplier from `1.1` to `1.15` in `src/datafun/app.py`.
+I changed the short threshold multiplier from '0.9' to '0.85' and the
+long threshold multiplier from '1.1 to '1.15' in 'src/datafun/app.py'.
 
 I made this change to create a wider middle range when classifying penguin
 flipper lengths. This makes a flipper length need to be farther from the
@@ -103,6 +103,32 @@ average before it is classified as SHORT or LONG.
 
 After running the project successfully, I observed that the logged short
 threshold was lower and the logged long threshold was higher.
+
+## Final Project: Auto MPG Analysis
+
+### Question
+
+How does a car's city fuel economy, measured in miles per gallon (MPG),
+vary across different cylinder counts?
+
+### Dataset
+
+I applied the project to the Auto MPG dataset from the UCI Machine Learning
+Repository. The dataset contains information about 398 cars, including MPG,
+cylinders, weight, horsepower, acceleration, model year, and origin.
+
+### Approach
+
+I changed the project to load 'data/auto-mpg.data'. I set 'cylinders' as the
+group column and 'mpg' as the measurement column. The project logs the
+cylinder groups, calculates MPG thresholds around the mean, and creates a
+histogram of MPG values.
+
+### Result
+
+The project ran successfully and created a histogram titled
+"Distribution of mpg." The chart shows that many cars have lower-to-middle MPG
+values, with fewer cars at the highest MPG values.
 
 ## Important Folders and Files
 

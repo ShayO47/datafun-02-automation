@@ -1126,3 +1126,255 @@ around the average value.
 2026-09-06 14:29:31 | INFO | P02 | ===================================
 2026-09-06 14:29:31 | INFO | P02 | END main() - Executed successfully!
 2026-09-06 14:29:31 | INFO | P02 | ===================================
+2026-09-06 14:48:47 | INFO | P02 | === RUN START ===
+2026-09-06 14:48:47 | INFO | P02 | project=P02
+2026-09-06 14:48:47 | INFO | P02 | repo_dir=datafun-02-automation
+2026-09-06 14:48:47 | INFO | P02 | python=3.14.7
+2026-09-06 14:48:47 | INFO | P02 | os=Windows 11
+2026-09-06 14:48:47 | INFO | P02 | shell=powershell
+2026-09-06 14:48:47 | INFO | P02 | cwd=.
+2026-09-06 14:48:47 | INFO | P02 | github_actions=False
+2026-09-06 14:48:47 | INFO | P02 | ===================================
+2026-09-06 14:48:47 | INFO | P02 | START main()
+2026-09-06 14:48:47 | INFO | P02 | ===================================
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | 01. LOAD the data.
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | data file = data\auto-mpg.data
+2026-09-06 14:48:47 | INFO | P02 | Data loaded successfully.
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | 02. INSPECT the data.
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | START inspect
+2026-09-06 14:48:47 | INFO | P02 |    row_count:    398
+2026-09-06 14:48:47 | INFO | P02 |    column_count: 9
+2026-09-06 14:48:47 | INFO | P02 |    column_names: ['mpg', 'cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'model_year', 'origin', 'car_name']
+2026-09-06 14:48:47 | INFO | P02 | END inspect. Returning inspection_string.
+2026-09-06 14:48:47 | INFO | P02 | 
+----------------
+Data Inspection:
+----------------
+    One row means: one penguin
+    Row count: 398
+    Column count: 9
+    Column names: ['mpg', 'cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'model_year', 'origin', 'car_name']
+
+---------------
+First Few Rows:
+---------------
+    mpg  cylinders  displacement  horsepower  weight  acceleration  model_year  origin                   car_name
+0  18.0          8         307.0       130.0  3504.0          12.0          70       1  chevrolet chevelle malibu
+1  15.0          8         350.0       165.0  3693.0          11.5          70       1          buick skylark 320
+2  18.0          8         318.0       150.0  3436.0          11.0          70       1         plymouth satellite
+3  16.0          8         304.0       150.0  3433.0          12.0          70       1              amc rebel sst
+4  17.0          8         302.0       140.0  3449.0          10.5          70       1                ford torino
+
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | 03. REPEAT logic using a for loop.
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | Column name: mpg
+2026-09-06 14:48:47 | INFO | P02 | Column name: cylinders
+2026-09-06 14:48:47 | INFO | P02 | Column name: displacement
+2026-09-06 14:48:47 | INFO | P02 | Column name: horsepower
+2026-09-06 14:48:47 | INFO | P02 | Column name: weight
+2026-09-06 14:48:47 | INFO | P02 | Column name: acceleration
+2026-09-06 14:48:47 | INFO | P02 | Column name: model_year
+2026-09-06 14:48:47 | INFO | P02 | Column name: origin
+2026-09-06 14:48:47 | INFO | P02 | Column name: car_name
+2026-09-06 14:48:47 | INFO | P02 | Selected group column: cylinders
+2026-09-06 14:48:47 | INFO | P02 | Reason for choosing this group: 
+The cylinders column has a small number of unique values.
+Using a for loop lets the program process and log each cylinder group.
+
+2026-09-06 14:48:47 | INFO | P02 | Item: 8
+2026-09-06 14:48:47 | INFO | P02 | Item: 4
+2026-09-06 14:48:47 | INFO | P02 | Item: 6
+2026-09-06 14:48:47 | INFO | P02 | Item: 3
+2026-09-06 14:48:47 | INFO | P02 | Item: 5
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | 04. TRANSFORM one list to another list.
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | Capitalized column names: ['MPG', 'CYLINDERS', 'DISPLACEMENT', 'HORSEPOWER', 'WEIGHT', 'ACCELERATION', 'MODEL_YEAR', 'ORIGIN', 'CAR_NAME']
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | 05. BRANCH based on conditions.
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | Selected measurement column: mpg
+2026-09-06 14:48:47 | INFO | P02 | Reason for choosing this measurement: 
+Miles per gallon varies across cars.
+There is no fixed cutoff, so the program calculates the average
+and assigns a classification based on thresholds around that average.
+
+2026-09-06 14:48:47 | INFO | P02 | mpg - Minimum: 9.0
+2026-09-06 14:48:47 | INFO | P02 | mpg - Maximum:  46.6
+2026-09-06 14:48:47 | INFO | P02 | mpg - Mean:     23.514572864321607
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | Sample mpg: 18.0
+2026-09-06 14:48:47 | INFO | P02 | Short threshold multiplier: 0.85
+2026-09-06 14:48:47 | INFO | P02 | Long threshold multiplier:  1.15
+2026-09-06 14:48:47 | INFO | P02 | Short threshold: 19.987386934673367
+2026-09-06 14:48:47 | INFO | P02 | Long threshold:  27.041758793969848
+2026-09-06 14:48:47 | INFO | P02 | First row mpg classification: SHORT
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | 06. REPEAT while a condition is true.
+2026-09-06 14:48:47 | INFO | P02 | -------------------------------
+2026-09-06 14:48:47 | INFO | P02 | Starting to process measurements periodically...
+2026-09-06 14:48:47 | INFO | P02 | Max records to process: 10
+2026-09-06 14:48:47 | INFO | P02 | Stream wait seconds: 1
+2026-09-06 14:48:47 | INFO | P02 | Current count: 0
+2026-09-06 14:48:47 | INFO | P02 | Current mpg: 18.0
+2026-09-06 14:48:47 | INFO | P02 | Updated count: 1
+2026-09-06 14:48:48 | INFO | P02 | Current mpg: 15.0
+2026-09-06 14:48:48 | INFO | P02 | Updated count: 2
+2026-09-06 14:48:49 | INFO | P02 | Current mpg: 18.0
+2026-09-06 14:48:49 | INFO | P02 | Updated count: 3
+2026-09-06 14:48:50 | INFO | P02 | Current mpg: 16.0
+2026-09-06 14:48:50 | INFO | P02 | Updated count: 4
+2026-09-06 14:48:51 | INFO | P02 | Current mpg: 17.0
+2026-09-06 14:48:51 | INFO | P02 | Updated count: 5
+2026-09-06 14:48:52 | INFO | P02 | Current mpg: 15.0
+2026-09-06 14:48:52 | INFO | P02 | Updated count: 6
+2026-09-06 14:48:53 | INFO | P02 | Current mpg: 14.0
+2026-09-06 14:48:53 | INFO | P02 | Updated count: 7
+2026-09-06 14:48:54 | INFO | P02 | Current mpg: 14.0
+2026-09-06 14:48:54 | INFO | P02 | Updated count: 8
+2026-09-06 14:48:55 | INFO | P02 | Current mpg: 14.0
+2026-09-06 14:48:55 | INFO | P02 | Updated count: 9
+2026-09-06 14:48:56 | INFO | P02 | Current mpg: 15.0
+2026-09-06 14:48:56 | INFO | P02 | Updated count: 10
+2026-09-06 14:48:57 | INFO | P02 | -------------------------------
+2026-09-06 14:48:57 | INFO | P02 | 07. VISUALIZE the selected measurement.
+2026-09-06 14:48:57 | INFO | P02 | -------------------------------
+2026-09-06 14:48:57 | INFO | P02 | Creating a chart to visualize the selected measurement.
+2026-09-06 14:48:57 | INFO | P02 | We selected one numeric column, so let's look at the distribution.
+2026-09-06 14:48:57 | INFO | P02 | Chart saved successfully at docs\images\measurement-distribution.png.
+2026-09-06 14:48:57 | INFO | P02 | IMPORTANT: Close chart window to continue by clicking its X or close button.
+2026-09-06 14:49:10 | INFO | P02 | ===================================
+2026-09-06 14:49:10 | INFO | P02 | END main() - Executed successfully!
+2026-09-06 14:49:11 | INFO | P02 | ===================================
+2026-09-06 14:59:53 | INFO | P02 | === RUN START ===
+2026-09-06 14:59:53 | INFO | P02 | project=P02
+2026-09-06 14:59:53 | INFO | P02 | repo_dir=datafun-02-automation
+2026-09-06 14:59:53 | INFO | P02 | python=3.14.7
+2026-09-06 14:59:53 | INFO | P02 | os=Windows 11
+2026-09-06 14:59:53 | INFO | P02 | shell=powershell
+2026-09-06 14:59:53 | INFO | P02 | cwd=.
+2026-09-06 14:59:53 | INFO | P02 | github_actions=False
+2026-09-06 14:59:53 | INFO | P02 | ===================================
+2026-09-06 14:59:53 | INFO | P02 | START main()
+2026-09-06 14:59:53 | INFO | P02 | ===================================
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | 01. LOAD the data.
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | data file = data\auto-mpg.data
+2026-09-06 14:59:53 | INFO | P02 | Data loaded successfully.
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | 02. INSPECT the data.
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | START inspect
+2026-09-06 14:59:53 | INFO | P02 |    row_count:    398
+2026-09-06 14:59:53 | INFO | P02 |    column_count: 9
+2026-09-06 14:59:53 | INFO | P02 |    column_names: ['mpg', 'cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'model_year', 'origin', 'car_name']
+2026-09-06 14:59:53 | INFO | P02 | END inspect. Returning inspection_string.
+2026-09-06 14:59:53 | INFO | P02 | 
+----------------
+Data Inspection:
+----------------
+    One row means: one penguin
+    Row count: 398
+    Column count: 9
+    Column names: ['mpg', 'cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'model_year', 'origin', 'car_name']
+
+---------------
+First Few Rows:
+---------------
+    mpg  cylinders  displacement  ...  model_year  origin                   car_name
+0  18.0          8         307.0  ...          70       1  chevrolet chevelle malibu
+1  15.0          8         350.0  ...          70       1          buick skylark 320
+2  18.0          8         318.0  ...          70       1         plymouth satellite
+3  16.0          8         304.0  ...          70       1              amc rebel sst
+4  17.0          8         302.0  ...          70       1                ford torino
+
+[5 rows x 9 columns]
+
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | 03. REPEAT logic using a for loop.
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | Column name: mpg
+2026-09-06 14:59:53 | INFO | P02 | Column name: cylinders
+2026-09-06 14:59:53 | INFO | P02 | Column name: displacement
+2026-09-06 14:59:53 | INFO | P02 | Column name: horsepower
+2026-09-06 14:59:53 | INFO | P02 | Column name: weight
+2026-09-06 14:59:53 | INFO | P02 | Column name: acceleration
+2026-09-06 14:59:53 | INFO | P02 | Column name: model_year
+2026-09-06 14:59:53 | INFO | P02 | Column name: origin
+2026-09-06 14:59:53 | INFO | P02 | Column name: car_name
+2026-09-06 14:59:53 | INFO | P02 | Selected group column: cylinders
+2026-09-06 14:59:53 | INFO | P02 | Reason for choosing this group: 
+The cylinders column has a small number of unique values.
+Using a for loop lets the program process and log each cylinder group.
+
+2026-09-06 14:59:53 | INFO | P02 | Item: 8
+2026-09-06 14:59:53 | INFO | P02 | Item: 4
+2026-09-06 14:59:53 | INFO | P02 | Item: 6
+2026-09-06 14:59:53 | INFO | P02 | Item: 3
+2026-09-06 14:59:53 | INFO | P02 | Item: 5
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | 04. TRANSFORM one list to another list.
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | Capitalized column names: ['MPG', 'CYLINDERS', 'DISPLACEMENT', 'HORSEPOWER', 'WEIGHT', 'ACCELERATION', 'MODEL_YEAR', 'ORIGIN', 'CAR_NAME']
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | 05. BRANCH based on conditions.
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | Selected measurement column: mpg
+2026-09-06 14:59:53 | INFO | P02 | Reason for choosing this measurement: 
+Miles per gallon varies across cars.
+There is no fixed cutoff, so the program calculates the average
+and assigns a classification based on thresholds around that average.
+
+2026-09-06 14:59:53 | INFO | P02 | mpg - Minimum: 9.0
+2026-09-06 14:59:53 | INFO | P02 | mpg - Maximum:  46.6
+2026-09-06 14:59:53 | INFO | P02 | mpg - Mean:     23.514572864321607
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | Sample mpg: 18.0
+2026-09-06 14:59:53 | INFO | P02 | Short threshold multiplier: 0.85
+2026-09-06 14:59:53 | INFO | P02 | Long threshold multiplier:  1.15
+2026-09-06 14:59:53 | INFO | P02 | Short threshold: 19.987386934673367
+2026-09-06 14:59:53 | INFO | P02 | Long threshold:  27.041758793969848
+2026-09-06 14:59:53 | INFO | P02 | First row mpg classification: SHORT
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | 06. REPEAT while a condition is true.
+2026-09-06 14:59:53 | INFO | P02 | -------------------------------
+2026-09-06 14:59:53 | INFO | P02 | Starting to process measurements periodically...
+2026-09-06 14:59:53 | INFO | P02 | Max records to process: 10
+2026-09-06 14:59:53 | INFO | P02 | Stream wait seconds: 1
+2026-09-06 14:59:53 | INFO | P02 | Current count: 0
+2026-09-06 14:59:53 | INFO | P02 | Current mpg: 18.0
+2026-09-06 14:59:53 | INFO | P02 | Updated count: 1
+2026-09-06 14:59:54 | INFO | P02 | Current mpg: 15.0
+2026-09-06 14:59:54 | INFO | P02 | Updated count: 2
+2026-09-06 14:59:55 | INFO | P02 | Current mpg: 18.0
+2026-09-06 14:59:55 | INFO | P02 | Updated count: 3
+2026-09-06 14:59:56 | INFO | P02 | Current mpg: 16.0
+2026-09-06 14:59:56 | INFO | P02 | Updated count: 4
+2026-09-06 14:59:57 | INFO | P02 | Current mpg: 17.0
+2026-09-06 14:59:57 | INFO | P02 | Updated count: 5
+2026-09-06 14:59:58 | INFO | P02 | Current mpg: 15.0
+2026-09-06 14:59:58 | INFO | P02 | Updated count: 6
+2026-09-06 14:59:59 | INFO | P02 | Current mpg: 14.0
+2026-09-06 14:59:59 | INFO | P02 | Updated count: 7
+2026-09-06 15:00:00 | INFO | P02 | Current mpg: 14.0
+2026-09-06 15:00:00 | INFO | P02 | Updated count: 8
+2026-09-06 15:00:01 | INFO | P02 | Current mpg: 14.0
+2026-09-06 15:00:01 | INFO | P02 | Updated count: 9
+2026-09-06 15:00:02 | INFO | P02 | Current mpg: 15.0
+2026-09-06 15:00:02 | INFO | P02 | Updated count: 10
+2026-09-06 15:00:03 | INFO | P02 | -------------------------------
+2026-09-06 15:00:03 | INFO | P02 | 07. VISUALIZE the selected measurement.
+2026-09-06 15:00:03 | INFO | P02 | -------------------------------
+2026-09-06 15:00:03 | INFO | P02 | Creating a chart to visualize the selected measurement.
+2026-09-06 15:00:03 | INFO | P02 | We selected one numeric column, so let's look at the distribution.
+2026-09-06 15:00:03 | INFO | P02 | Chart saved successfully at docs\images\measurement-distribution.png.
+2026-09-06 15:00:03 | INFO | P02 | IMPORTANT: Close chart window to continue by clicking its X or close button.
+2026-09-06 15:00:03 | INFO | P02 | ===================================
+2026-09-06 15:00:03 | INFO | P02 | END main() - Executed successfully!
+2026-09-06 15:00:03 | INFO | P02 | ===================================
