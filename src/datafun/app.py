@@ -99,7 +99,7 @@ AUTO_MPG_COLUMNS: Final[tuple[str, ...]] = (
 # important thing to know about any dataset.
 # Come up with a short phrase that describes it.
 # Fill this string value AFTER exploring the data.
-GRAIN: Final[str] = "one penguin"  # CUSTOM
+GRAIN: Final[str] = "one automobile"  # CUSTOM
 
 
 # CUSTOM: Choose a categorical group that we could process with a for loop.
